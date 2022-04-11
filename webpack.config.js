@@ -6,10 +6,10 @@ const path = require('path/posix');
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: path.join(__dirname, 'client', 'index.js'),
-  // output: {
-  //   filename: 'bundle.js',
-  //   path: path.resolve(__dirname, "build"),
-  // },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, "build"),
+  },
   module: {
     rules: [
       {
@@ -33,8 +33,16 @@ module.exports = {
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
-      }
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({

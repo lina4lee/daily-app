@@ -40,7 +40,7 @@ const saveAnswer = () => {
       
       <button type="button" className="btnMain" onClick={saveAnswer}>Save</button>
       <div id='testing'>
-      <Goals blog = {arrays}/>
+      {/* <Goals blog = {arrays}/> */}
       </div>
     </div>
   )

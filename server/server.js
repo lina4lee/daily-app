@@ -42,7 +42,8 @@ app.use((err, req, res, next) => {
 });
 
 //open a connection to database
-const source = process.env.DATABASE_URL
+// const source = process.env.DATABASE_URL
+DATABASE_URL = 'mongodb + srv:dani:yVX5ZKyV4IJGkONY@cluster0.p3huk.mongodb.net/Cluster0?retryWrites=true&w=majority'
 mongoose.connect(source, {
   useNewUrlParser: true,
   useUnifiedTopology: true
